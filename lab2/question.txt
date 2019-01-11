@@ -1,0 +1,20 @@
+Implement the following problem in Java.
+
+Create a class Clock with the following attributes:
+- Hour(int 1...12),
+- Minutes(int 0...59),
+- Seconds(int 0...59),
+- isAM(Boolean).
+Class Clock will support the methods:
+- getHours,
+- getMinutes,
+- getSeconds, and
+- getIsAM.
+Create three constructors: 
+- one with no parameters(set clock to midnight),
+- one with hour and isAM specified(sets minutes and seconsds to zero),
+- one with all attributes specified. Class Clock also supports a setTime() method that sets all four attributes from argument values and a tick() method that sets all four attributesd from argument values and a tick() method that increments time by one second. Instantiate Clock in main, test the clock's transition from hour to hour, minute to minute, AM to PM.
+
+1. Create an interface called SecondObserver that defines a single method tick(). Make class Clock implement this interface.
+2. Create a new  class PrintClock that exytends the Clock class. Provid a mtehod that producs the current time. Test the class.
+3. Create a new class TickingPrintClock that extends PrintClock class. TickingPrintClock extends the tick() method to print the new time on each tick, in addition to the function of the method. Test the class.
