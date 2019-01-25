@@ -64,3 +64,8 @@ are more profitable. The statistics can also be used to decide the charge for di
 3. For every car, there is a per hour
 charge, and a per kilometer charge.
 4. There is a charge of Rs 150 for every night halt regardless of the type of the vehicle.
+
+## Files
+* `srs/srs_template_ieee.doc`: It is the detailed format of the SRS Document in IEEE format.
+* `srs/SRS_index.txt`: It is the concise format of the SRS Document built on top of the IEEE format of SRS.
+* `srs/SRS_guide.ppt`: It covers SRS Document format with minimal explanations.

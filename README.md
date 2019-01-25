@@ -8,4 +8,4 @@ Simple program according to requirements.
 * SRS Documentation
 
 ***
-Software Engineering Laboratory | NIT Rourkela
+<center> Software Engineering Laboratory | NIT Rourkela </center>

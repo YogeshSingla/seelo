@@ -1,0 +1,105 @@
+1. Introduction
+1.1 Purpose
+1.2 Document Conventions
+1.2.1 Definitions
+1.2.2 Acronyms
+1.2.3 Abbreviations
+1.3 Intended Audience and Reading Suggestions
+1.4 Product Scope
+1.5 References
+1.6 Overview of Developer's Responsibillites
+2. Overall Description
+2.1 Product Perspective
+2.2 Product Functions
+2.3 User Classes and Characteristics
+2.4 Operating Environment
+2.5 Design and Implementation Constraints
+2.6 User Documentation
+2.7 Assumptions and Dependencies
+3 External Interface Requirements
+3.1 User Interfaces
+3.2 Hardware Interfaces
+3.3 Software Interfaces
+3.4 Communication Interfaces
+-------------------
+4. System Features
+-------------------
+We arrange the system features in a functional hierarchy as that makes the most sense for this product – Transport Automation Vehicle System. We have three main features of TAVS. First, renting of cars. It is of utmost importance as this feature generates the revenue for the company and will the customer facing. Second, vehicle management. This is important backend feature for the company. Third, data collection and analysis. This is of lower priority than the other two features but will be useful in making the company more effecient and profitable in longer run.
+----------------------------------------
+4.1	System Feature 1 : Renting Vehicles
+----------------------------------------
+-------------------------------
+4.1.1 Description and Priority
+-------------------------------
+This feature will allow customers to browse the available vehicles. The vehicles and charges will be displayed along with the constraints of booking. The customer requests and the software confirms the booking after relevant processing at backend. The customer sets return date and time and renting has started. On return of vehicle the rent transaction is complete.
+It is high priority feature as this is going to generate revenue for the company. Specific priority component ratings:
+Benefit: 8
+Penalty: 6
+Cost: 5
+Risk: 4 
+(each rated on a relative scale from a low of 1 to a high of 9).
+----------------------------------
+4.1.2 Stimulus/Response Sequences
+----------------------------------
+Sequence of events is: browse, request, book, return.
+------------------------------
+4.1.3 Functional Requirements
+------------------------------
+DESCRIPTION
+These requirments are in serial. These requirements serve the customer and processing happens the the company side only.
+------------------------------------
+4.1.3.1 Requirement 1 : Request Car
+------------------------------------
+STATE
+New User Screen
+All vehicles availability and charges are shown
+INPUT
+Car selected for booking with date and time of return
+OUTPUT
+Booking page confirmation shown to user
+PROCESSING
+Only vehicles available currently are displayed. This processing is done on company backend side.
+------------------------------------
+4.1.3.2 Requirement 2 : Book Car
+------------------------------------
+STATE
+Booking confirmation page
+INPUT
+User deposits a security amount
+OUTPUT
+Booking is confirmed subject to all conditions
+PROCESSING
+The vehicle current mileage and fuel is stored and status marked to rent for the user specified time and dates.
+The amount paid by user is recorded.
+------------------------------------
+4.1.3.3 Requirement 3 : Return Car
+------------------------------------
+STATE
+Return User Screen
+INPUT
+Vehicle ID
+OUTPUT
+Final charges returned to user
+PROCESSING
+The final payment is decided based on deposit and cost incurred
+Car status changed and relevant stats updated
+
+
+4.1	System Feature 2
+4.1.1 Description and Priority
+4.1.2 Stimulus/Response Sequences
+4.1.3 Functional Requirements
+
+5. Other Nonfunctional Requirements
+5.1 Performance Requirements
+5.2 Safety Requirements
+5.3 Security Requirements
+5.4 Software Quality Attributes
+5.5 Business Rules
+6. Other Requirements
+---------------------
+Appendix A: Glossary
+---------------------
+TAVS : Transport Automation Vehicle System
+Appendix B: Analysis Models
+Appendix C: To Be Determined List
