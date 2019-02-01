@@ -16,11 +16,32 @@
 2.5 Design and Implementation Constraints
 2.6 User Documentation
 2.7 Assumptions and Dependencies
+
+-----------------------------------
 3 External Interface Requirements
+-----------------------------------
+--------------------
 3.1 User Interfaces
+--------------------
+There are two base views. 
+Client side user interface for renting vehicles.
+Company/server side user interface for management and data collection.
+Both views will run on different machines with possible one to many relation b/w server and client views.
+------------------------
 3.2 Hardware Interfaces
+------------------------
+The system would need a computer to run on both sides. 
+Client side should have minimum hardware requirements of a internet connectivity supported machine with at least 512 MB of RAM and 1 GB of storage space.
+Server side would need to cater to multiple clients and hence needs significant compute power. It should have basic server setup and internet connectivity.
+------------------------
 3.3 Software Interfaces
+------------------------
+The storage of data should be organised in a database. The system views for server and client should be in the form of GUI or at least CLIs.
+-------------------------------
 3.4 Communication Interfaces
+-------------------------------
+Network connectivity is required for client and server to communicated with each other. The database also needs to communicate with the server side similar to a MVP architecture.
+
 -------------------
 4. System Features
 -------------------
@@ -46,7 +67,7 @@ Sequence of events is: browse, request, book, return.
 4.1.3 Functional Requirements
 ------------------------------
 DESCRIPTION
-These requirments are in serial. These requirements serve the customer and processing happens the the company side only.
+These requirements are in serial. These requirements serve the customer and processing happens the the company side only.
 ------------------------------------
 4.1.3.1 Requirement 1 : Request Car
 ------------------------------------
@@ -84,14 +105,149 @@ PROCESSING
 The final payment is decided based on deposit and cost incurred
 Car status changed and relevant stats updated
 
+-----------------------------------------
+4.2	System Feature 1 : Vehicle Management
+-----------------------------------------
+-------------------------------
+4.2.1 Description and Priority
+-------------------------------
+This feature allows the company the manage it's fleet of vehicles. It also ensures consistency and availability to the customers.
+Specific priority component ratings:
+Benefit: 8
+Penalty: 8
+Cost: 9
+Risk: 3 
+(each rated on a relative scale from a low of 1 to a high of 9).
+----------------------------------
+4.2.2 Stimulus/Response Sequences
+----------------------------------
+The events can be adding new vehicle, selling old vehicles, monitor state of current vehicle
+------------------------------
+4.2.3 Functional Requirements
+------------------------------
+DESCRIPTION
+------------------------------------
+4.2.3.1 Requirement 1 : Add Vehicle
+------------------------------------
+STATE
+Administrator View
+INPUT
+Vehicle details to be added
+OUTPUT
+Unique ID generated for the new vehicle and it is added to the system
+PROCESSING
+Basic update operations occur on the system end after checking for conflicts
+------------------------------------
+4.2.3.2 Requirement 2 : Remove Vehicle
+------------------------------------
+STATE
+Administrator View
+INPUT
+Vehicle ID to be sold/removed.
+OUTPUT
+Success or Failure alert
+PROCESSING
+Basic delete operation occurs on the system end
+------------------------------------
+4.2.3.3 Requirement 3 : Monitor Vehicle
+------------------------------------
+STATE
+Administrator View
+INPUT
+Vehicle ID
+OUTPUT
+Current state of vehicle from available, rented or in repair.
+PROCESSING
+Basic search/select operation occurs on the sytem end
+----------------------------------------------------
+4.3	System Feature 1 : Data Collection and Analysis
+----------------------------------------------------
+-------------------------------
+4.3.1 Description and Priority
+-------------------------------
+This feature will allow company to make informed choices about prices and vehicles to keep through proper data collection.
+It is relatively low priority feature as this does not directly generate revenue for the company. Specific priority component ratings:
+Benefit: 4
+Penalty: 1
+Cost: 6
+Risk: 3 
+(each rated on a relative scale from a low of 1 to a high of 9).
+----------------------------------
+4.3.2 Stimulus/Response Sequences
+----------------------------------
+For the administrator side only, 
+Amount of maintenance expenses per vehicle estimated values.
+Statistics page about various types of vehicles
+Profitability and charges for each vehicle
+------------------------------
+4.3.3 Functional Requirements
+------------------------------
+DESCRIPTION
+For the data collection and analysis feature, there are are three main requirements. One, maintenance charges calculation. Second, base statistics for each vehicle. Third, profitability and charge calculation per vehicle.
+-------------------------------------------
+4.3.3.1 Requirement 1 : Maintenance Charge
+-------------------------------------------
+STATE
+Administrator View
+INPUT
+Vehicle Type and ID
+OUTPUT
+Maintenance Charges incurred
+PROCESSING
+Processing occurs on the administrator side only. The maintenance charges are taken from external interface to the repair shops of the company.
+------------------------------------
+4.3.3.2 Requirement 2 : Statistics
+------------------------------------
+STATE
+Administrator View
+INPUT
+No input required
+OUTPUT
+Tabular display of all statistics till date
+PROCESSING
+The processing occurs on company side with data collected in each transaction stored in a database
 
-4.1	System Feature 2
-4.1.1 Description and Priority
-4.1.2 Stimulus/Response Sequences
-4.1.3 Functional Requirements
+------------------------------------------------------
+4.3.3.3 Requirement 3 : Profit and charge calculation
+------------------------------------------------------
+STATE
+Administrator View
+INPUT
+Vehicle Type or ID
+OUTPUT
+Current profitability of the vehicle and the recommended charge that should be levied on the customer for that vehicle
+PROCESSING
+The statistics collected are processed to come up with charge for the car by linear regression
 
+-------------------------------------
 5. Other Nonfunctional Requirements
+-------------------------------------
+These requirements do not form the core of the software being developed but do play a major role in the percieved reliabilty and likeability for the users.
+-----------------------------
 5.1 Performance Requirements
+-----------------------------
+--------------------
+5.1.1 Response Time 
+--------------------
+The response time should be within the human visual system resolution ie 10ms. The user may tolerate upto 1s but above that would be a potential for the user to get annoyed and may switch products.
+-----------------
+5.1.2 Capacity
+-----------------
+The scale of the software should be sufficient for production environment. 
+Atleast 100 users at one time can access the system.
+Atleast 100 vehicles should be supported by the system.
+
+----------------------------------
+5.1.3 Availability vs Consistency
+----------------------------------
+The availability of the system should be above 90%. That is atleast 9 out of 10 times, the user should be able to access the system in a given time period. Consistency is important during the booking phase and availability of data in monitoring the vehicles.
+
+---------------------------
+5.1.4 Errors and Debugging
+---------------------------
+The system should record logs of all levels - errors, warnings, changes, debug and verbose.
+This will help operations team to get information and take quick responses.
+
 5.2 Safety Requirements
 5.3 Security Requirements
 5.4 Software Quality Attributes
@@ -101,5 +257,6 @@ Car status changed and relevant stats updated
 Appendix A: Glossary
 ---------------------
 TAVS : Transport Automation Vehicle System
+
 Appendix B: Analysis Models
 Appendix C: To Be Determined List
