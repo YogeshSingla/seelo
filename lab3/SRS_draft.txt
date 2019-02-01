@@ -1,21 +1,94 @@
+----------------
 1. Introduction
+----------------
+This section describes the background information needed to understand the rest of the SRS.
+------------
 1.1 Purpose
+------------
+The product is a software for car rental company. This is the first release, version 1. The scope of this SRS is complete with the standalone software system.
+-------------------------
 1.2 Document Conventions
+-------------------------
+The order of appearance of sections does not account for their relative priority. Where-ever necessary priority has been explicitly stated.
+------------------
 1.2.1 Definitions
+------------------
+None
+---------------
 1.2.2 Acronyms
+---------------
+None
+--------------------
 1.2.3 Abbreviations
+--------------------
+TAVS : Transport Automation Vehicle System
+----------------------------------------------
 1.3 Intended Audience and Reading Suggestions
+----------------------------------------------
+The intended audience for the SRS is the design architect for the software, management of the company and developers.
+------------------
 1.4 Product Scope
+------------------
+The scope of this project is limited to learning and experience of software developement lifecycle. The authors do not take responsiblity of any deployment in the real world.
+
+----------------
 1.5 References
+----------------
+IEEE Software Requirements Specification Template : https://web.cs.dal.ca/~hawkey/3130/srs_template-ieee.doc
+
+---------------------------------------------
 1.6 Overview of Developer's Responsibillites
+---------------------------------------------
+The developer should stick to the requirements of the system. 
+Plagiarism should be avoided and due credit given to sources.
+
+-----------------------
 2. Overall Description
+-----------------------
+-------------------------
 2.1 Product Perspective
+-------------------------
+This is a standalone application. It is not a part of any other software and is independent. Specifically, this product is being developed for educational purposes as the part of Software Engineering Labortory with best possible real world scenario simulation.
+----------------------
 2.2 Product Functions
+----------------------
+The product has one main function:
+* To be deployed in a car rental company.
+Users can rent vehicles and company can manage the vehicle fleet and take in statistical data.
+This has been elaborated in System Features section.
+-------------------------------------
 2.3 User Classes and Characteristics
+-------------------------------------
+USER
+This is the user of the software who wishes to rent vehicles. There characteristic is:
+* Limited knowledge of the software
+* Exposed to client view only
+* Need little to no expertise for the software
+ADMINISTRATOR
+This is the user who manages the software on the company side. Server and database is also handled. There characteristic is:
+* Higher expertise needed about software
+* Need to collect and understand statistics and debug in case of problems
+* Exposed to all views of the software
+--------------------------
 2.4 Operating Environment
+--------------------------
+The software will be deployed on a server and connected to internet.
+The operating environment should be atleast Windows 7 or Linux server version after 2015.
+------------------------------------------
 2.5 Design and Implementation Constraints
+------------------------------------------
+The server is single point only. The design has not accounted for distributed server and consequentyl distributed database that may have challenges like sharding etc. This limits the maximum users for the software and is scalable upto a limit of few thousand users only.
+The implementation is proposed in python only language with NoSQL database. 
+
+-----------------------
 2.6 User Documentation
+-----------------------
+User documentation for the software will be available on github @yogeshsingla
+
+---------------------------------
 2.7 Assumptions and Dependencies
+---------------------------------
+It is assumed internet connectivity is available at all times. The project has dependencies as the python project.
 
 -----------------------------------
 3 External Interface Requirements
@@ -248,15 +321,42 @@ The availability of the system should be above 90%. That is atleast 9 out of 10 
 The system should record logs of all levels - errors, warnings, changes, debug and verbose.
 This will help operations team to get information and take quick responses.
 
+------------------------
 5.2 Safety Requirements
+------------------------
+No safety requirements have been considered as of now.
+--------------------------
 5.3 Security Requirements
+--------------------------
+The system proposed doesn't take mandatory account signup and data collection. This is to promote data privacy policies of GDPR and make users more confident of the system use. This may pose some security concerns including spoofing threats.
+
+--------------------------------
 5.4 Software Quality Attributes
+--------------------------------
+Covered in Section 5.1.3
+
+-------------------
 5.5 Business Rules
+-------------------
+The users of the software must have valid Driving License. This is not verified as of now although there details will be taken during renting process.
+----------------------
 6. Other Requirements
+----------------------
+The software will be released under GPL license. Reuse is permitted with due credit to this source as follows:
+AUTHOR : YOGESH SINGLA
+GITHUB : @yogeshsingla
+
 ---------------------
 Appendix A: Glossary
 ---------------------
 TAVS : Transport Automation Vehicle System
 
+----------------------------
 Appendix B: Analysis Models
+----------------------------
+Will be covered soon.
+
+----------------------------------
 Appendix C: To Be Determined List
+----------------------------------
+None

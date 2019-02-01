@@ -7,5 +7,8 @@ Simple program according to requirements.
 * Project allocation
 * SRS Documentation
 
+## Lab 4
+* DFD
+
 ***
 <center> Software Engineering Laboratory | NIT Rourkela </center>
