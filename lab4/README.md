@@ -25,3 +25,6 @@ Every level contains 3-7 bubbles only. Inputs/Outputs should be balanced between
 * System proceses may further be decomposed
 * Make sure the I/O of this process in Level 1 are only used in Level 2. Maintain consistency.
 
+***
+https://en.wikipedia.org/wiki/Data_flow_diagram
+
