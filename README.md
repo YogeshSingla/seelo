@@ -10,5 +10,7 @@ Simple program according to requirements.
 ## Lab 4
 * DFD
 
+## Lab 5
+* Structure Chart
 ***
 <center> Software Engineering Laboratory | NIT Rourkela </center>
