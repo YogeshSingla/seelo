@@ -12,5 +12,6 @@ Simple program according to requirements.
 
 ## Lab 5
 * Structure Chart
+* Software Design Document
 ***
 <center> Software Engineering Laboratory | NIT Rourkela </center>

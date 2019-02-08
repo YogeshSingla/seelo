@@ -1,7 +1,7 @@
 ## Lab 4 - DFD
 ### Data Flow Diagram
 
-Transfer of data between processes shown using DFD.
+Transfer of data between processes shown using DFD. Do **not** show control flow. Only **data flow**.
 
 1. Rectangle - External entity
 2. Circle - Process
@@ -25,6 +25,9 @@ Every level contains 3-7 bubbles only. Inputs/Outputs should be balanced between
 * System proceses may further be decomposed
 * Make sure the I/O of this process in Level 1 are only used in Level 2. Maintain consistency.
 
+### Shortcomings of DFD
+* Take only intuitive meaning of functions and doesnt' cover edge cases.
+* Level of decomposition is subjective
 ***
 https://en.wikipedia.org/wiki/Data_flow_diagram
 
