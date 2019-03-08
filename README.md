@@ -17,5 +17,14 @@ Simple program according to requirements.
 ## Lab 6
 * Use Case Diagram
 * Class Diagram
+
+## Lab 7
+* Sequence Diagram
+* Collaboration Diagram
+
+## Lab 8 
+* Activity Diagram
+* State Chart Diagram
+* Package Diagram
 ***
 <center> Software Engineering Laboratory | NIT Rourkela </center>
