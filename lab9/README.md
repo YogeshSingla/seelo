@@ -23,3 +23,15 @@ Update all the scripts header to:
 ```
 #!/usr/bin/python3
 ```
+
+#### 2. CGI Python scripts not executing
+
+##### Problem
+The scripts are not authorized for execution
+
+##### Solution
+Update permissions of the files in cgi-bin
+```
+cd cgi-bin
+sudo chmod 775 *.py
+```
