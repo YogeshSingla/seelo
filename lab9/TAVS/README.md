@@ -1,8 +1,8 @@
-# Python-CGI-WebApp
+# Transport Automation Vehicle System
 
 ## About
 
-> **Python-CGI-WebApp** is a web application that uses **Python 3** scripts for the **Transport Automation Vehicle System**.
+> **Python-CGI-WebApp** is used with **Python 3** scripts for the **Transport Automation Vehicle System**.
 
 > A **CGI** _(Common Gateway Interface)_ enabled **HTTP server** (written in Python 3) handles these requests.
 
@@ -39,7 +39,8 @@ Content type: text/html \n\n
 
 ## Prerequisites and Deployment
 
-This WebApp requires Python3. Get Python3 from here
+This WebApp requires Python3.  
+Get Python3 from here
 
 > https://www.python.org/
 
@@ -54,7 +55,7 @@ $ cd webapp
 Start the HTTP Server with following command
 
 ```
-$ python simple_httpd.py
+$ python3 simple_httpd.py
 ```
 
 You should see the following output on terminal
