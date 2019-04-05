@@ -1,4 +1,4 @@
-def Admin:
+class Admin:
 	def __init__():
 		self.a_id = 0
 

@@ -4,7 +4,7 @@ AVAILABLE = 1
 BOOKED = 2
 REPAIR = 3
 
-def FleetVehicle:
+class FleetVehicle:
 	def __init__():
 		self.rent = 0
 		self.status = UNSOLD

@@ -1,4 +1,4 @@
-def Statistics:
+class Statistics:
 	def __init__():
 		self.fleet = []
 		self.customers = []

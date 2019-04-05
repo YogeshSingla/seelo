@@ -1,4 +1,4 @@
-def Vehicle:
+class Vehicle:
 	"Stores every vehicle detail"
 	def __init__():
 		self.v_id = 0

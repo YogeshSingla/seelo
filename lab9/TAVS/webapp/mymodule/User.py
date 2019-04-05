@@ -1,4 +1,4 @@
-def User:
+class User:
 	"Stores every user detail"
 	def __init__():
     	self.u_name = ''
