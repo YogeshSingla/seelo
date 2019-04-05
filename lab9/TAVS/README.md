@@ -17,29 +17,9 @@ The _Common Gateway Interface_ offers a standard protocol for web servers to exe
 ![CGI Architecture](webapp/images/cgiarch.png)
 
 ## Working
+The webapp framework is in HTML5 and CSS while the server processing occurs in python scripts.
+Both are interfaced using CGI.
 
-There are three Python Scripts that work together to generate the HTML webpage
-
-* **generate.py**
-	
-	The Home Page has a link to this python script to start the Web Application.
-	The script imports "keyreader.py" and "template_engine.py" modules and makes function calls to generate the webpage.
-
-* **keyreader.py**
-
-	This Python script has a function called "getkey(loc)" that takes the location of a text file as argument.
-	The text file contains a PUBLIC KEY. The function reads the entire content and splits them at '\n' to create a list.
-	Each item in the list is then converted to an HTML line and printed.
-
-* **template_engine.py**
-
-	This script is completely responsible for generating the entire webpage.
-	It has several function that generate the required HTML code.
-	To make sure that printed strings are interpreted as HTML code by the browser a function specifies the CGI Content.
-
-```
-Content type: text/html \n\n
-```
 
 ## Prerequisites and Deployment
 
@@ -64,35 +44,22 @@ $ python3 simple_httpd.py
 
 You should see the following output on terminal
 
-![Server started on port 8080](webapp/images/<TODO>.PNG)
+![Server started on port 7000](webapp/images/term_start.PNG)
 
 This means the server is ready to take requests
 
 _DON'T CLOSE THIS TERMINAL_
 
-2. Open your web browser and type localhost:8080
+2. Open your web browser and type localhost:7000
 
 You should see the following output on terminal
 
-![Request Webpage content](webapp/images/<TODO>.PNG)
+![Request Webpage content](webapp/images/welcome.PNG)
 
-3. On the browser you should see this webpage
-
-![Home Page](webapp/images/<TODO>.PNG)
-
-4. Click on the **WebApp** link and you should see successfull execution message in terminal
-
-![Python Script Executed](webapp/images/<TODO>.PNG)
-
-5. A new dynamic webpage will be generated like this
-
-![WebApp Result](webapp/images/<TODO>.PNG)
+3. In case of public endpoint, the available domain can be used to access this website on the internet.
 
 ### 2. Shutting down the web server
 
 > To stop the web server simply close the terminal or press [Ctrl + C] in the terminal
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
