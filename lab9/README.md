@@ -83,3 +83,6 @@ Trying to book a vehicle that does not exist. Enter allowed vehicles from the fo
 
 #### Error #2
 Trying to book another vehicle before returning the previous vehicle.
+
+#### Error #3
+Trying to return without booking first.
