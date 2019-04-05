@@ -2,49 +2,59 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="/css/w3.css" />
+<!-- <link rel="stylesheet" type="text/css" href="/css/w3.css" /> -->
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
-<link rel="stylesheet" type="text/css" href="/css/rent.css" />
+<link rel="stylesheet" type="text/css" href="/css/form.css" />
 
 <title>Rent</title>
 </head>
 
 <body>
 <div id="page">
-<div class="gallery">
-  <a target="_blank" href="/images/vehicles/ambassador.jpg">
-    <img src="/images/vehicles/ambassador.jpg" alt="Ambassador" width="600" height="400">
-  </a>
-  <div class="desc">Ambassador</div>
+  <!-- <div id="header">
+          <h1>TAVS</h1>
+            <h2>Transport Automation Vehicle System</h2>
+            
+        </div> -->
+        
+ <div id="bar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <!-- <li><a href="/html/av.html">Available Vehicles</a></li> -->
+        
+                
+            </ul>
 </div>
+<br>
+<br>
+<br>
+<br>
 
-<div class="gallery">
-  <a target="_blank" href="/images/vehicles/marutiomni.png">
-    <img src="/images/vehicles/marutiomni.png" alt="Maruti Omni" width="600" height="400">
-  </a>
-  <div class="desc">Maruti Omni</div>
-</div>
+<form action="/cgi-bin/rent.py">
+  Name:<br>
+  <input type="text" name="name"><br><br>
+  DL:<br>
+  <input type="number" name="dl"><br><br>
+  Vehicle:<br>
+  <select name="cars">
+    <option value="ambassador"><p>1. Ambassadors : 10 Non-AC, 2 AC</p></option>
+              <option value="tatasumo"><p>2. Tata Sumo : 5 Non-AC, 5 AC</p></option>
+              <option value="marutiomni"><p>3. Maruti Omni : 10 Non-AC</p></option>
+              <option value="marutiesteem"><p>4. Maruti Esteem : 10 AC</p></option>
+              <option value="mahindraarmada"><p>5. Mahindra Armada : 10 Non-AC  </p></option>
+  </select>
+  <br><br>
+  Pickup time:<br>
+  <input type="datetime-local" name="pickup"><br><br>
+  Return time:<br>
+  <input type="datetime-local" name="return"><br><br>
 
-<div class="gallery">
-  <a target="_blank" href="/images/vehicles/tatasumo.jpg">
-    <img src="/images/vehicles/tatasumo.jpg" alt="Tata Sumo" width="600" height="400">
-  </a>
-  <div class="desc">Tata Sumo</div>
-</div>
 
-<div class="gallery">
-  <a target="_blank" href="/images/vehicles/marutiesteem.jpg">
-    <img src="/images/vehicles/marutiesteem.jpg" alt="Maruti Esteem" width="600" height="400">
-  </a>
-  <div class="desc">Maruti Esteem</div>
-</div>
+  <input type="submit">
+</form>
 
-<div class="gallery">
-  <a target="_blank" href="/images/vehicles/mahindraarmada.jpg">
-    <img src="/images/vehicles/mahindraarmada.jpg" alt="Mahindra Armada" width="600" height="400">
-  </a>
-  <div class="desc">Mahindra Armada</div>
-</div>
+
+
 
 </div>
 
