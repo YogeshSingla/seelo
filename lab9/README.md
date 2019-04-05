@@ -74,3 +74,12 @@ IndentationError: expected an indented block
 Python is space/tab conscious!
 Make sure you are consistent with spaces or tabs across all your python scripts.
 Use sublime text editors bottom right option to convert tabs/spaces.
+
+### List of ERRORS that may be encountered
+These are for troubleshooting. During execution to prevent the system from landing in an unconsistent state multiple safety checks are done. Each throws a error cause. They are listed below.
+
+#### Error #1
+Trying to book a vehicle that does not exist. Enter allowed vehicles from the form only.
+
+#### Error #2
+Trying to book another vehicle before returning the previous vehicle.

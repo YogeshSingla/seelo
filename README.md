@@ -31,4 +31,10 @@ Simple program according to requirements.
 * Coding
 
 ***
+Presentation Tips
+1. Run web app in chrome guest account to avoid any passwords/auto-fill
+2. Point to git version control throughout lab, addendums for coding part and my own module.
+
+
+***
  Software Engineering Laboratory | NIT Rourkela | Author: Yogesh Singla
