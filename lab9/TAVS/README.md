@@ -44,7 +44,7 @@ $ python3 simple_httpd.py
 
 You should see the following output on terminal
 
-![Server started on port 7000](webapp/images/term_start.PNG)
+![Server started on port 7000](webapp/images/term_start.png)
 
 This means the server is ready to take requests
 
@@ -54,7 +54,7 @@ _DON'T CLOSE THIS TERMINAL_
 
 You should see the following output on terminal
 
-![Request Webpage content](webapp/images/welcome.PNG)
+![Request Webpage content](webapp/images/welcome.png)
 
 3. In case of public endpoint, the available domain can be used to access this website on the internet.
 
