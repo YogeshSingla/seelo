@@ -53,3 +53,24 @@ sys.path.insert(0, '/home/kirito/TODO/seelo/lab9/TAVS/webapp/mymodule/')
 
 ```
 Add this to files which need to import the mymodule
+
+#### 4. Indentation error
+
+##### Problem
+
+```
+Traceback (most recent call last):
+  File "/home/kirito/TODO/seelo/lab9/TAVS/webapp/cgi-bin/rent.py", line 7, in <module>
+    import User
+  File "/home/kirito/TODO/seelo/lab9/TAVS/webapp/mymodule/User.py", line 4
+    self.u_name = ''
+       ^
+IndentationError: expected an indented block
+		
+```
+
+##### Solution
+
+Python is space/tab conscious!
+Make sure you are consistent with spaces or tabs across all your python scripts.
+Use sublime text editors bottom right option to convert tabs/spaces.

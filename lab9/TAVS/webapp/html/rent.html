@@ -32,13 +32,13 @@
 
 <form action="/cgi-bin/rent.py">
   Name:<br>
-  <input type="text" name="name"><br><br>
+  <input type="text" name="u_name"><br><br>
   DL:<br>
-  <input type="number" name="dl"><br><br>
+  <input type="number" name="driving_license_number"><br><br>
   Aadhaar Card:<br>
   <input type="number" name="aadhaar"><br><br>
   Vehicle:<br>
-  <select name="cars">
+  <select name="vehicle_booked">
     <option value="ambassador"><p>1. Ambassadors : 10 Non-AC, 2 AC</p></option>
               <option value="tatasumo"><p>2. Tata Sumo : 5 Non-AC, 5 AC</p></option>
               <option value="marutiomni"><p>3. Maruti Omni : 10 Non-AC</p></option>
@@ -47,9 +47,9 @@
   </select>
   <br><br>
   Pickup time:<br>
-  <input type="datetime-local" name="pickup" value="2019-04-03T19:30"><br><br>
+  <input type="datetime-local" name="pickup_time" value="2019-04-03T19:30"><br><br>
   Return time:<br>
-  <input type="datetime-local" name="return" value="2019-04-04T19:30"><br><br>
+  <input type="datetime-local" name="return_time" value="2019-04-04T19:30"><br><br>
 
 
   <input type="submit">
