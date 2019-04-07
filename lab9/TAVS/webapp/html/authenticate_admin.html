@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="/css/w3.css" /> -->
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/form.css" />
+
+<title>Admin Login</title>
+</head>
+
+<body>
+<div id="page">
+  <!-- <div id="header">
+          <h1>TAVS</h1>
+            <h2>Transport Automation Vehicle System</h2>
+            
+        </div> -->
+        
+ <div id="bar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <!-- <li><a href="/html/av.html">Available Vehicles</a></li> -->
+        
+                
+            </ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<form action="/cgi-bin/authenticate_admin.py" method="POST">
+  Admin ID:<br>
+  <input type="number" name="a_id" value=0><br><br>
+  Password:<br>
+  <input type="text" name="password"><br><br>
+  
+  <input type="submit">
+</form>
+
+
+</div>
+
+</body>
+</html> 

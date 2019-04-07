@@ -1,6 +1,7 @@
 class Admin:
 	def __init__():
 		self.a_id = 0
+		self.a_password = ''
 
 	def getID():
 		return self.a_id

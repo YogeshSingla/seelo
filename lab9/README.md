@@ -75,6 +75,17 @@ Python is space/tab conscious!
 Make sure you are consistent with spaces or tabs across all your python scripts.
 Use sublime text editors bottom right option to convert tabs/spaces.
 
+#### 5. Calling cross CGI scripts
+
+##### Problem
+
+When the admin login is successful, the server should send the admin.py request instead of a html response from the existing cgi script of authenticate_admin
+
+##### Solution
+
+Import the admin.py within the success case of if condition to call the admin.py cgi script
+
+
 ### List of ERRORS that may be encountered
 These are for troubleshooting. During execution to prevent the system from landing in an unconsistent state multiple safety checks are done. Each throws a error cause. They are listed below.
 
@@ -86,3 +97,15 @@ Trying to book another vehicle before returning the previous vehicle.
 
 #### Error #3
 Trying to return without booking first.
+
+#### Error #4
+No vehicles added by admin to book for customers.
+
+#### Error #5
+Vehicle being trying to be updated is missing
+
+#### Error #6
+Vehicle files is missing
+
+#### Error #7 
+Admin credentials file missing
