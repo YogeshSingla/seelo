@@ -70,8 +70,13 @@ print('Content-type: text/html')
 # parse form data
 # plus blank line
 html = """
-<TITLE>rent</TITLE>
-<H1>Server Response</H1>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/css/w3.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/form.css" />
+<TITLE>return</TITLE>
+<H1  style="text-align:center">Server Response</H1>
 <HR>
 <P>%s</P>
 <HR>"""

@@ -23,8 +23,70 @@ class FleetVehicle(Vehicle.Vehicle):
 
 	def rent_vehicle():
 		pass
-		#TODO Add rent module
+		#TODO: Integrate this module
+		#store data in json format
+		if (os.path.isfile(FILEPATH) and os.access(PATH, os.R_OK)):
+			#print("File exists and is readable")
+			data_list = []
+			u_id = data[1]
+			isAllowedBooking = True
+			with open(FILEPATH, 'rt') as csvfile:
+				read_obj = csv.reader(csvfile, delimiter = ',')
+				for row in read_obj:
+					data_list.append(row)
+					#field_headings = data_list[0]
+					#data_list.remove(data_list[0])
+			for record in data_list:
+				if u_id == record[1]:
+					print("ERROR #2: Please return the booked vehicle.")
+					isAllowedBooking = False
+			if(isAllowedBooking):
+				with open(FILEPATH, 'at') as csvfile:
+					write_obj = csv.writer(csvfile, delimiter = ',')	
+					write_obj.writerow(data)
+					print("Success")
+		else:
+			print ("Either file is missing or is not readable, creating file...")
+			with open(FILEPATH, 'wt') as csvfile:
+				write_obj = csv.writer(csvfile, delimiter = ',')
+				write_obj.writerow(data)
+
 
 	def return_vehicle():
 		pass
+		#TODO: Integrate this module
+		#store data in json format
+		if (os.path.isfile(FILEPATH) and os.access(PATH, os.R_OK)):
+			#print("File exists and is readable")
+			data_list = []
+			u_id = data[1]
+			isAllowedReturn = False
+			return_record = []
+			with open(FILEPATH, 'rt') as csvfile:
+				read_obj = csv.reader(csvfile, delimiter = ',')
+				for row in read_obj:
+					data_list.append(row)
+					#field_headings = data_list[0]
+					#data_list.remove(data_list[0])
+			for record in data_list:
+				if u_id == record[1]:
+					isAllowedReturn = True
+					return_record = record
+			data_list = []
+			if(isAllowedReturn):
+				with open(FILEPATH, 'rt') as csvfile:
+					read_obj = csv.reader(csvfile, delimiter = ',')
+					for row in read_obj:
+						if u_id != row[1]:
+							data_list.append(row)
+					
+				with open(FILEPATH, 'wt') as csvfile:
+					write_obj = csv.writer(csvfile, delimiter = ',')	
+					for row in data_list:
+						write_obj.writerow(row)
+				print("Return Successful")
+			else:
+				print("ERROR #3: Please book a vehicle first.")
+		else:
+			print ("ERROR #3: Please book a vehicle first.")
 		#TODO Add return module

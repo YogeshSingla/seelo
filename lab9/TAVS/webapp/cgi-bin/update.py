@@ -10,12 +10,28 @@ sys.path.insert(0, '/home/kirito/TODO/seelo/lab9/TAVS/webapp/mymodule/')
 import os
 import csv
 
+import cgi
+
 import FleetVehicle
 
 PATH='/home/kirito/TODO/seelo/lab9/TAVS/webapp/mymodule/data_storage/'
 FILENAME = 'fleet_vehicles.csv'
 FILEPATH = PATH + FILENAME
 v_id = 0
+data_list = []
+
+def form_to_json(form_data):
+	#customer conversion function from passed form data to stored json data
+	data = [0,0,0,0,0,0]
+	#modify the global u_id variable to allow value access to data_storage()
+	global u_id
+	# assign u_id based on vehicle
+	u_id = 0
+	data[0] = form_data['vehicle'].value
+	data[1] = form_data['rent'].value
+	data[2] = form_data['status'].value
+	
+	return data
 
 
 def read_vehicle():
@@ -32,7 +48,8 @@ def read_vehicle():
 		return [0]*12
 
 
-def write_vehicle(v_id,data):
+def write_vehicle(data):
+	v_id = data[0]
 	isUpdated = False
 	if (os.path.isfile(FILEPATH) and os.access(PATH, os.R_OK)):
 		with open(FILEPATH, 'rt') as csvfile:
@@ -41,7 +58,9 @@ def write_vehicle(v_id,data):
 				if v_id != row[3]:
 					data_list.append(row)
 				else:
-					data_list.append(data)
+					row[0] = data[1]
+					row[1] = data[2]
+					data_list.append(row)
 					isUpdated = True
 
 		with open(FILEPATH, 'wt') as csvfile:
@@ -94,7 +113,7 @@ for vehicle in vehicles:
 	content_html = content_html + vehicle_html
 
 
-html = """
+html1 = """
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="/css/w3.css" />
@@ -128,6 +147,23 @@ html = """
 </html>
 
 """
+
+html = """
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/css/w3.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/form.css" />
+<TITLE>UPDATE FLEET</TITLE>
+<H1  style="text-align:center">Server Response</H1>
+<HR>
+<P>%s</P>
+<HR>"""
+
+form = cgi.FieldStorage()
+
+data = form_to_json(form)
+write_vehicle(data)
 
 print('Content-type: text/html')
 print(html%content_html)

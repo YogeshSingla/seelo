@@ -16,6 +16,20 @@ FILENAME = 'bookings.csv'
 FILEPATH = PATH + FILENAME
 u_id = 0
 
+current_available = {}
+
+def check_vehicle_available(data):
+	if data in current_available.keys():
+		current_available[data] = current_available[data] - 1
+		if current_available[data] <= 0:
+			current_available[data] = 0
+			return False
+	else:
+		if data == 'tatasumo':
+			current_available[data] = 5
+		else:
+			current_available[data] = 10
+	return True
 
 def form_to_json(form_data):
 	#customer conversion function from passed form data to stored json data
@@ -26,6 +40,10 @@ def form_to_json(form_data):
 	data[0] = form_data['u_name'].value
 	data[1] = form_data['driving_license_number'].value
 	data[2] = form_data['vehicle_booked'].value
+	if(check_vehicle_available(data[2])):
+		print("[Vehicle Available]")
+	else:
+		print("ERROR #8: All vehicles of this type booked.")
 	data[3] = form_data['aadhaar'].value
 	data[4] = form_data['pickup_time'].value
 	data[5] = form_data['return_time'].value
@@ -65,17 +83,20 @@ print('Content-type: text/html')
 # parse form data
 # plus blank line
 html = """
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="/css/w3.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/form.css" />
 <TITLE>rent</TITLE>
-<H1>Server Response</H1>
+<H1  style="text-align:center">Server Response</H1>
 <HR>
-<P>%s</P>
+%s
 <HR>"""
 if not 'vehicle_booked' in form:
 	print(html % 'ERROR #1: Invalid Booking Request: Vehicle not found')
 else:
 	print(html % ('Sending Booking Request for:  %s.' % form['vehicle_booked'].value))
-
-#print form
 
 
 

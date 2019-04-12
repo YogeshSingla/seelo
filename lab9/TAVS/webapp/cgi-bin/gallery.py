@@ -56,7 +56,7 @@ for vehicle in vehicles:
 
 	vehicle_html = """
 	<div class="gallery">
-	<a target="_blank" href="/images/vehicles/%s">
+	<a target="/images/%s" href="/html/rent.html">
 	<img src="/images/vehicles/%s" alt="%s" width="600" height="400">
 	</a>
 	<div class="desc">%s

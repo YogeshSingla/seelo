@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="/css/w3.css" /> -->
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/form.css" />
+
+<title>Update Fleet</title>
+</head>
+
+<body>
+<div id="page">
+  <!-- <div id="header">
+          <h1>TAVS</h1>
+            <h2>Transport Automation Vehicle System</h2>
+            
+        </div> -->
+        
+ <div id="bar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <!-- <li><a href="/html/av.html">Available Vehicles</a></li> -->
+        
+                
+            </ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<form action="/cgi-bin/update.py">
+  Vehicle:<br>
+  <select name="vehicle">
+    <option value="101"><p>1. Ambassadors : 10 Non-AC, 2 AC</p></option>
+              <option value="501"><p>2. Tata Sumo : 5 Non-AC, 5 AC</p></option>
+              <option value="401"><p>3. Maruti Omni : 10 Non-AC</p></option>
+              <option value="301"><p>4. Maruti Esteem : 10 AC</p></option>
+              <option value="201"><p>5. Mahindra Armada : 10 Non-AC  </p></option>
+  </select>
+  Rent:<br>
+  <input type="number" name="rent"><br><br>
+  <br><br>
+  Buy/Sell/Repair/Unchanged:<br>
+  <select name="status">
+    <option value="buy"><p>1. Buy</p></option>
+    <option value="sell"><p>2. Sell </p></option>
+    <option value="repair"><p>3. Repair </p></option>
+    <option value="SOLD"><p>4. Unchanged</p></option>
+  </select>
+  <input type="submit">
+</form>
+
+
+
+
+</div>
+
+</body>
+</html> 

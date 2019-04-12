@@ -109,3 +109,6 @@ Vehicle files is missing
 
 #### Error #7 
 Admin credentials file missing
+
+#### Error #8
+All vehicles of choosen rent type booked
